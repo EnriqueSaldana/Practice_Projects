@@ -14,8 +14,7 @@ public class Deck {
     //Constructor to create standard 52 card deck
     Deck(){
         buildDeck();
-      
-        //shuffle();
+        shuffle();
     }
     //Build 52 card deck
     public void buildDeck(){
@@ -72,6 +71,12 @@ public class Deck {
         Card draw = deck.remove(0);
         usedCards.add(draw);
         return draw;
+    }
+
+    //The used Cards will be added back to the Undealt deck and the used Cards deck will be cleared
+    public void newDeck(){
+        this.deck.addAll(this.usedCards);
+        this.usedCards.clear();
     }
     //Shuffle the deck
     public void shuffle(){
