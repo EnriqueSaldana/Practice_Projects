@@ -19,13 +19,13 @@ public class test {
     }
 
     //Test to see if all cards are present in the deck
-    @Test
-    public void printDeck(){
-        Deck deck1 = new Deck();
-        Card card1;
-        for(int i = 0; i < deck1.sizeOfDeck(); i++){
-            card1 = deck1.getCardAtIndex(i);
-            System.out.println(card1.toString());
-        }
-    }
+    //@Test
+    //public void printDeck(){
+    //    Deck deck1 = new Deck();
+    //    Card card1;
+    //    for(int i = 0; i < deck1.sizeOfDeck(); i++){
+    //        card1 = deck1.getCardAtIndex(i);
+    //        System.out.println(card1.toString());
+    //    }
+    //}
 }
