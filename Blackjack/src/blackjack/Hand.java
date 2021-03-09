@@ -23,6 +23,21 @@ public class Hand {
         return this.total;
     }
 
+    //Clears hand for the start of a new game
+    public void newHand(){
+        this.hand.clear();
+        this.total = 0;
+    }
+
+    //Checks if the initial 2 cards dealt resulted in a Blackjack (21)
+    public boolean checkForBlackjack(){
+        if(this.hand.get(0).getValue() + this.hand.get(1).getValue() == 21){
+            return true;
+        }
+    
+        return false;
+    }
+
     //Return String representation of the Cards on Dealer's hand
     public String toString(){
         String cardsInHand = "";
