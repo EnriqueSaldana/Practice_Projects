@@ -30,7 +30,7 @@ public class Card {
 
     //Returns String representation of a Card
     public String toString(){
-        return (getValue() + " " + getRank() + " " + getSuit());
+        return ("[" + getRank() + " " + getSuit() + "]");
     }
 
 }
