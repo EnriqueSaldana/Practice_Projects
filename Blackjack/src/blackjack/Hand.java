@@ -18,6 +18,11 @@ public class Hand {
         total = total + draw.getValue();
     }
 
+    //Deal a specific Card - use for testing purposes
+    public void dealCard(Card c){
+        this.hand.add(c);
+    }
+
     //Returns total of the dealer's hand
     public int getTotal(){
         return this.total;
@@ -34,7 +39,6 @@ public class Hand {
         if(this.hand.get(0).getValue() + this.hand.get(1).getValue() == 21){
             return true;
         }
-    
         return false;
     }
 
