@@ -1,6 +1,8 @@
 package blackjack;
 
 import static org.junit.Assert.assertEquals;
+
+import org.junit.Assert;
 import org.junit.Test;
 
 public class test {
@@ -8,7 +10,7 @@ public class test {
     @Test
     public void testCard(){
         Card test = new Card(10, 'K', "Hearts");
-        assertEquals("10 K Hearts", test.toString());
+        assertEquals("[K Hearts]", test.toString());
     }
 
     @Test
@@ -16,6 +18,16 @@ public class test {
         Deck deck = new Deck();
         assertEquals(52, deck.sizeOfDeck());
 
+    }
+
+    //Test to see if initial two cards dealt resulted in a BlackjackS
+    @Test
+    public void testBlackjack(){
+        Hand hand = new Hand();
+        hand.dealCard(new Card(10, 'K', "Hearts"));
+        hand.dealCard(new Card(11, 'A', "Hearts"));
+
+        Assert.assertTrue(hand.checkForBlackjack());
     }
 
     //Test to see if all cards are present in the deck
