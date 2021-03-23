@@ -17,7 +17,6 @@ public class test {
     public void testDeckSize(){
         Deck deck = new Deck();
         assertEquals(52, deck.sizeOfDeck());
-
     }
 
     //Test to see if initial two cards dealt resulted in a BlackjackS
