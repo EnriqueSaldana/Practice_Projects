@@ -42,6 +42,14 @@ public class Hand {
         return false;
     }
 
+    //Check hand total for Bust (over 21)
+    public boolean checkForBust(){
+        if(this.getTotal() > 21){
+            return true;
+        }
+        return false;
+    }
+
     //Return String representation of the Cards on Dealer's hand
     public String toString(){
         String cardsInHand = "";
