@@ -6,6 +6,7 @@ import java.util.List;
 public class Hand {
     private List<Card> hand = new ArrayList<Card>();
     private int total = 0;
+    private int aceCount = 0;
 
     Hand(){
 
@@ -15,6 +16,7 @@ public class Hand {
     public void deal(Deck deck){
         Card draw = deck.deal();
         this.hand.add(draw);
+        checkForAce(draw);
         total = total + draw.getValue();
     }
 
@@ -28,10 +30,23 @@ public class Hand {
         return this.total;
     }
 
+    //Returns number of Aces in hand
+    public int getAceCount(){
+        return this.aceCount;
+    }
+
     //Clears hand for the start of a new game
     public void newHand(){
         this.hand.clear();
         this.total = 0;
+        this.aceCount = 0;
+    }
+
+    //Track if an Ace is drawn to later determine whether to use it as a 1 or 11
+    public void checkForAce(Card c){
+        if(c.getRank() == 'A'){
+            aceCount++;
+        }
     }
 
     //Checks if the initial 2 cards dealt resulted in a Blackjack (21)
