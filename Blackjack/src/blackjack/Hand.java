@@ -5,14 +5,14 @@ import java.util.List;
 
 public class Hand {
     private List<Card> hand = new ArrayList<Card>();
-    private int total = 0;
-    private int aceCount = 0;
+    private int total = 0;         // Hand total value
+    private int aceCount = 0;      // Numbers of Aces in hand
 
     Hand(){
 
     }
 
-    //Deal a card to the dealer's hand
+    //Deal a card to the (Player's/Dealer's) hand
     public void deal(Deck deck){
         Card draw = deck.deal();
         this.hand.add(draw);
@@ -25,7 +25,12 @@ public class Hand {
         this.hand.add(c);
     }
 
-    //Returns total of the dealer's hand
+    //Return list of cards on (Player's/Dealer's) hand
+    public List<Card> getHand(){
+        return this.hand;
+    }
+
+    //Returns total of the (Player's/Dealer's) hand
     public int getTotal(){
         return this.total;
     }
@@ -75,13 +80,12 @@ public class Hand {
         return false;
     }
 
-    //Return String representation of the Cards on Dealer's hand
+    //Return String representation of the Cards on (Player's/Dealer's) hand
     public String toString(){
         String cardsInHand = "";
         for(int i = 0; i < this.hand.size(); i++){
             cardsInHand += this.hand.get(i).toString();
         }
         return cardsInHand;
-    }
-    
+    }  
 }
