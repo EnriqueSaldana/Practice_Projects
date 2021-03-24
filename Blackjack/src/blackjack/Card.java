@@ -1,6 +1,5 @@
 package blackjack;
 
-
 public class Card {
     private int value;   // 2-11
     private char rank;   // 2-10, J, Q, K, A
@@ -32,5 +31,4 @@ public class Card {
     public String toString(){
         return ("[" + getRank() + " " + getSuit() + "]");
     }
-
 }
