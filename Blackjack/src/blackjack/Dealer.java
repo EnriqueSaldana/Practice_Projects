@@ -1,35 +1,33 @@
 package blackjack;
 
-import java.util.ArrayList;
-import java.util.List;
+public class Dealer extends Hand{
+    protected Deck deck;
 
-public class Dealer {
-    private List<Card> dealerHand = new ArrayList<Card>();
-    private int total = 0;
 
-    Dealer(){
-
-    }
-
-    //Deal a card to the dealer's hand
-    public void deal(Deck deck){
-        Card draw = deck.deal();
-        dealerHand.add(draw);
-        total = total + draw.getValue();
-    }
-
-    //Returns total of the dealer's hand
-    public int getTotal(){
-        return this.total;
-    }
-
-    //Return String representation of the Cards on Dealer's hand
-    public String toString(){
-        String hand = "";
-        for(int i = 0; i < dealerHand.size(); i++){
-            hand += dealerHand.get(i).toString();
-        }
-        return hand;
-    }
     
+    Dealer(Deck d){
+        this.deck = d;
+    }
+
+    public void dealerTurn(){
+        if(this.getTotal() > 16 && this.getTotal() <= 21){
+            return;
+        }
+        else{
+            while(this.getTotal() < 17){
+                this.deal(deck);
+                if(this.checkForBust()){
+                    if(this.getAceCount() > 0){
+                        this.setTotal(this.getTotal() - 10);
+                        this.setAceCount(this.getAceCount() -1);
+                    }
+                }
+            }
+        }
+    }
+
+    public void printDealerHand(){
+        String firstCard = "["+ this.getHand().get(0).getRank() + " " + this.getHand().get(0).getSuit() + "]";
+        System.out.println("Dealer's Hand: " + firstCard + "[ ]");
+    }
 }
