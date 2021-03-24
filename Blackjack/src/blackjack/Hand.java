@@ -30,9 +30,19 @@ public class Hand {
         return this.total;
     }
 
+    //Set total to value passed
+    public void setTotal(int t){
+        this.total = t;
+    }
+
     //Returns number of Aces in hand
     public int getAceCount(){
         return this.aceCount;
+    }
+
+    //Set aceCount to value passed
+    public void setAceCount(int count){
+        this.aceCount = count;
     }
 
     //Clears hand for the start of a new game
