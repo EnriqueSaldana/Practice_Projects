@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Player extends Hand{
     protected Deck deck;
-    protected char decision;
+    protected char decision;    //Used to store user input
 
     Player(Deck d){
         this.deck = d;
@@ -28,6 +28,7 @@ public class Player extends Hand{
                 return false;
             }
         }
+
         System.out.println("Enter S for Stay or H for Hit");
         this.decision = in.next().charAt(0);
 
